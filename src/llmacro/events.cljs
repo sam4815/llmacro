@@ -10,7 +10,7 @@
     db/default-db))
 
 (re-frame/reg-event-db
-  ::history-change
+  :history-change
   (fn [db [_ new-history]]
     (assoc db :history new-history)))
 
