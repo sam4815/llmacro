@@ -23,7 +23,9 @@ jobs:
           cmd-exe-workaround: 'latest'
 
       - name: Build web target 🔧
-        run: npm run release
+        run: |
+          npm install
+          npm run release
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
