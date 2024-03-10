@@ -6,7 +6,7 @@
 (defn chat [text]
   (.then (js/pipeline "text-generation" "Xenova/distilgpt2")
          (fn [text-generator]
-           (.then (text-generator. text {"min_length" 200})
+           (.then (text-generator. text {"min_length" 250})
                   (fn [result]
                     (let [generated-text ^js/String (.-generated_text (first result))]
                       (re-frame/dispatch [:history-change generated-text])))))))
